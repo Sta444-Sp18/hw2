@@ -1,0 +1,174 @@
+---
+title: "Homework 2"
+author: Your Name Here
+date: Due 2/20/2017 by 11:59 pm
+output: 
+  html_document:
+    theme: cosmo
+---
+
+### Question 1
+
+In class we mentioned that we can deal with overdispersion in a Poisson regression model by using a Negative Binomial distribution instead. There is a clever parameterization that helps with the interpretability of the model. If we define
+
+$$
+\begin{aligned}
+Y~|~Z &\sim \text{Pois}(\lambda \, Z) \\
+Z &\sim \text{Gamma}(\theta, \, \theta)
+\end{aligned}
+$$
+
+*show* that the marginal distribution of $Y = \int_0^\infty [Y~|~Z]~[Z] ~ dz$ will be negative binomial with,
+
+$$
+\begin{aligned}
+E(Y)   &= \lambda \\
+Var(Y) &= \lambda + \lambda^2/\theta
+\end{aligned}
+$$
+
+-----
+
+### Question 2
+
+<i>Imagine that a follow up study was conducted for the sleep study mentioned in Lecture 5. This time the researchers were interested in in exploring the effect of season (time of year) on sleep deprivation and reaction time. Following the previous protocal, they conducted two separate experiments in June and December with 5 different subjects in each (subjects were studied over 10 days with reaction time being assessed once each day). Each of the 100 observations (rows) therefore contains the subject's id, day of experiment (0-9), reaction time, and season (June or December). </i>
+
+<i> a. Write down a reasonable random intercept only model for this new experimental design. </i>
+
+$$ ~ $$
+
+<i> b. Sketch the structure of the covariance implied by this new model, assume that the random effect for each subject has variance $\sigma_s^2$ and the random effect for season has variance $\sigma_t^2$. </i>
+
+$$ ~ $$
+
+
+-----
+
+### Question 3
+
+<i>Assume we have a process defined by $y_t = 3 + 2\,t + 0.5 \, y_{t-1} + 0.1 \, y_{t-2} + w_t$ where $w_t \overset{iid}{\sim} \mathcal{N}(0, \sigma^2_w)$ </i>
+
+a. <i> Is $y_t$ stationary ? Show why or why not.</i>
+
+$$
+\begin{aligned}
+~
+\end{aligned}
+$$
+
+b. <i> Is $y_t$ difference stationary (i.e. is $y_t - y_{t-1}$ stationary)? Show why or why not.</i>
+
+$$
+\begin{aligned}
+~
+\end{aligned}
+$$
+
+
+-----
+
+### Question 4
+
+<i>Let $y_t = 1 + 0.5 \, y_{t-1} + 0.5 \, w_{t-1} + w_t$s, where $w_t \overset{iid}{\sim} \mathcal{N}(0,\sigma^2_w)$.</i>
+
+a. <i>Find $E(y_t)$</i>
+
+$$
+\begin{aligned}
+~
+\end{aligned}
+$$
+
+b. <i>Find $\text{Var}(y_t)$</i>
+
+$$
+\begin{aligned}
+~
+\end{aligned}
+$$
+
+c. <i>Find autocovariance function of $y_t$, $\gamma_y(h)$</i>
+
+$$
+\begin{aligned}
+~
+\end{aligned}
+$$
+
+d. <i>Find the autocorrelation function of $y_t$, $\rho_y(h)$</i>
+
+$$
+\begin{aligned}
+~
+\end{aligned}
+$$
+
+e. <i>Rewrite ${\bf y} = \{y_t\}$ as a multivariate normal distribution, clearly define both ${\bf \mu}$ and ${\bf \Sigma}$</i>
+
+$$
+\begin{aligned}
+~
+\end{aligned}
+$$
+
+-----
+
+### Question 5
+
+a. Write a function to simulate an AR(1) process for an arbitrary $\phi$, assume that $y_0 = 0$.
+
+```{r}
+
+```
+
+b. Pick a value of $\phi$ such that $0 < \phi < 1$, generate at least 1000 samples from this process and compare the empirical mean and variance to the appropriate theoretical values.
+
+```{r}
+
+```
+
+c. Compute the empirical ACF for your simulation, compare this to the values of theoretical autocorrelation function.
+
+```{r}
+
+```
+
+
+d. Repeat your simulation in part b. at least 100 times, create a **visualization** to compare your empirical means and variances to the appropriate theoretical values.
+
+```{r}
+
+```
+
+-----
+
+### Question 6
+
+a. Write a function to simulate an MA(1) process for an arbitrary $\theta$, assume that $y_0 = 0$.
+
+```{r}
+
+```
+
+b. Pick a value of $\theta$, generate at least 1000 samples from this process and compare the empirical mean and variance to the appropriate theoretical values.
+
+```{r}
+
+```
+
+c. Compute the empirical ACF for your simulation, compare this to the values of theoretical autocorrelation function.
+
+```{r}
+
+```
+
+
+d. Repeat your simulation in part b. at least 100 times, create a **visualization** to compare your empirical means and variances to the appropriate theoretical values.
+
+```{r}
+
+```
+
+
+
+
